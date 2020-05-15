@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Armazenando caminho do diretório de trabalho em uma variável
+# Armazenando caminho do código fonte em variável
 worktree=/var/www/deploy-automatico
 
 # Atualizando código fonte

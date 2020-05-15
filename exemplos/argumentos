@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Lendo os argumentos e armazenando em variáveis
+# Armazenando argumentos em variáveis
 read oldrev newrev ref
 
-#Armazenando caminho do diretório de trabalho em uma variável
+# Armazenando caminho do código fonte em variável
 worktree=/var/www/deploy-automatico
 
 echo "Atualizando código fonte"
