@@ -6,7 +6,7 @@ read oldrev newrev ref
 # Armazenando caminho do código fonte em variável
 worktree=/var/www/deploy-automatico
 
-echo "Atualizando código fonte"
+# Atualizando código fonte
 git --work-tree="$worktree" checkout -f
 
 if git --work-tree="$worktree" diff --name-only $oldrev $newrev | grep "^public\/assets\/.*\?\.js$" -q; then

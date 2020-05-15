@@ -6,7 +6,7 @@ read oldrev newrev ref
 # Armazenando caminho do código fonte em variável
 worktree=/var/www/deploy-automatico
 
-echo "Atualizando código fonte"
+# Atualizando código fonte
 git --work-tree="$worktree" checkout -f
 
 # Exibindo valores das variáveis
