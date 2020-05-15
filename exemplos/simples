@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Armazenando caminho do diretório de trabalho em uma variável
+worktree=/var/www/deploy-automatico
+
+# Atualizando código fonte
+git --work-tree="$worktree" checkout -f

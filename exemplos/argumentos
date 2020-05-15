@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Lendo os argumentos e armazenando em variáveis
+read oldrev newrev ref
+
+#Armazenando caminho do diretório de trabalho em uma variável
+worktree=/var/www/deploy-automatico
+
+echo "Atualizando código fonte"
+git --work-tree="$worktree" checkout -f
+
+# Exibindo valores das variáveis
+echo "Old revision: $oldrev"
+echo "New revision: $newrev"
+echo "Reference name: $ref"

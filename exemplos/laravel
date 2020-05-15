@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Lendo os argumentos e armazenando em variáveis
+read oldrev newrev ref
+
+#Armazenando caminho do diretório de trabalho em uma variável
+worktree=/var/www/deploy-automatico
+
+echo "Iniciando modo de manutenção"
+php $worktree/artisan down
+
+echo "Atualizando código fonte"
+git --work-tree="$worktree" checkout -f
+
+echo "Rodando migrations";
+php $worktree/artisan migrate --force
+
+echo "Finalizando modo de manutenção"
+php $worktree/artisan up

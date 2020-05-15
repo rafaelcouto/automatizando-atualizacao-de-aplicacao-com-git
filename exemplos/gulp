@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Lendo os argumentos e armazenando em variáveis
+read oldrev newrev ref
+
+#Armazenando caminho do diretório de trabalho em uma variável
+worktree=/var/www/deploy-automatico
+
+echo "Atualizando código fonte"
+git --work-tree="$worktree" checkout -f
+
+if git --work-tree="$worktree" diff --name-only $oldrev $newrev | grep "^public\/assets\/.*\?\.js$" -q; then
+    echo "Refazendo build da aplicação"
+    gulp build --cwd "$worktree"
+fi
